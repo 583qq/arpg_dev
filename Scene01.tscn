@@ -25,9 +25,9 @@ script = ExtResource( 2 )
 position = Vector2( 5, -5 )
 script = ExtResource( 4 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUI_Canvas" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
+[node name="GUI" parent="GUI_Canvas" instance=ExtResource( 5 )]
 anchor_right = 0.0
 margin_right = 540.0
 margin_bottom = 93.0

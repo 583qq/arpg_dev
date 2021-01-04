@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 
-
 var velocity = Vector2()
 var target = Vector2()
 
