@@ -1,3 +1,3 @@
 # arpg_dev
-GODOT ARPG 
+GODOT Isometric ARPG 
 New to GDScript/Engine, so some things can be pretty bad. 
