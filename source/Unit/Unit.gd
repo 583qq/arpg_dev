@@ -2,40 +2,35 @@
 #	Unit
 #
 
-func get_physical_mitigation(armor):
+func get_physical_mitigation(armor) -> float:
 	# 1% of physical mitigation per 100 armor
 	var mitigation = armor / 100
 	if mitigation > 90:	# 90% is THE cap
-		return 90
+		return 90.0
 	else:
 		return mitigation
 
 
-class Unit:
-	# Includes
-	const _UnitType = preload("res://source/Unit/UnitType.gd")
-	const _UnitAttributes = preload("res://source/Unit/UnitAttributes.gd")
-	const _UnitStats = preload("res://source/Unit/UnitStats.gd")
-
-	# General
-	var name: String
-	var guid: String	# Unique ID
+class_name Unit
+# General
+var name: String
+var guid: String	# Unique ID
 	
-	var type: _UnitType.UnitType
+var type: UnitType
 	
-	# Unit Attributes
-	var attributes: _UnitAttributes.UnitAttributes
+# Unit Attributes
+var attributes: UnitAttributes
 	
-	# Flags
-	var isAlive: bool
+# Flags
+var isAlive: bool
 	
-	# Stats container (with some functions)
-	var stats: _UnitStats.UnitStats
+# Stats container (with some functions)
+var stats: UnitStats
 	
-	func _init(unit_name: String, unit_type: _UnitType.UnitType, unit_stats: _UnitStats.UnitStats):
-		name = unit_name
-		type = unit_type
-		stats = unit_stats
-		attributes = unit_stats.attributes
+func _init(unit_name: String, unit_type: UnitType, unit_stats: UnitStats) -> void:
+	self.name = unit_name
+	self.type = unit_type
+	self.stats = unit_stats
+	self.attributes = unit_stats.attributes
 
 	

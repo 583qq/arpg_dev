@@ -6,11 +6,10 @@
 ##################################
 
 
+class_name Player extends Unit
 
-class Player:
-	extends "res://source/Unit/Unit.gd".Unit
-
-	func _init(player_name: String, player, stats).(player_name, player, stats):
-		pass
+func _init(player_name: String, player: UnitType, stats: UnitStats).(player_name, player, stats) -> void:
+	# WIP
+	pass
 	
 	

@@ -2,22 +2,22 @@ extends Node
 
 
 class Map:
-	var cell_size
-	var cell_center
+	var cell_size: Vector2
+	var cell_center: Vector2
 	
 	var map_scene
 	var tile_map
 	
 	var map_size
 	
-	func _init(scene, tile_layer):
+	func _init(scene, tile_layer) -> void:
 		map_scene = scene
 		tile_map = tile_layer
 		
 		cell_size = tile_map.cell_size
 		cell_center = Vector2(cell_size.x / 2, cell_size.y / 2)
 	
-	func grid_load():
+	func grid_load() -> void:
 		# Looking for non-null tiles
 		var used_cells = tile_map.get_used_cells()
 		print("Cells Used:\n", used_cells)
@@ -36,9 +36,10 @@ class Map:
 		var size_x = max_x - min_x + 1
 		
 		print("MapSize: ", size_x ," x ", size_y)
+		# WIP
 		pass
 	
-	func get_world_pos(x, y):
+	func get_world_pos(x, y) -> Vector2:
 		print("Converting coordinates to world position...")
 		return tile_map.world_to_map(Vector2(x, y))
 		

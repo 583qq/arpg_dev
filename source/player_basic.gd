@@ -9,6 +9,8 @@ var isMoving = false
 onready var tile_map = self.get_parent().get_node("main_tile")
 onready var camera = self.get_parent().get_node("MainCamera")
 
+var _Player: Player
+
 func cart_to_iso(cart):
 	var screen_pos = Vector2()
 	screen_pos.x = cart.x  - cart.y
@@ -17,7 +19,7 @@ func cart_to_iso(cart):
 
 # Character Position
 
-func position_debug():
+func position_debug() -> void:
 	print("Position: ", position.x, " ", position.y, " (animation: ", 
 	$AnimatedSprite.animation, ")")
 
@@ -40,14 +42,16 @@ func _input(event):
 
 
 
-
-# Pathfinding? and movement
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("idle")
 	print("Init Position: ", position)
+	# Player
+	var PlayerType = UnitType.new("Player", false)
+	var PlayerAttributes = UnitAttributes.new(10, 10, 10, 10)
+	var PlayerStats = UnitStats.new(PlayerAttributes)
+	
+	_Player = Player.new("Name", PlayerType, PlayerStats)
 
 
 func _physics_process(_delta):

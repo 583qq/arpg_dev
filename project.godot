@@ -8,9 +8,38 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Unit",
+"class": "Player",
+"language": "GDScript",
+"path": "res://source/Player/Player.gd"
+}, {
+"base": "Reference",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://source/Unit/Unit.gd"
+}, {
+"base": "Reference",
+"class": "UnitAttributes",
+"language": "GDScript",
+"path": "res://source/Unit/UnitAttributes.gd"
+}, {
+"base": "Reference",
+"class": "UnitStats",
+"language": "GDScript",
+"path": "res://source/Unit/UnitStats.gd"
+}, {
+"base": "Reference",
+"class": "UnitType",
+"language": "GDScript",
+"path": "res://source/Unit/UnitType.gd"
+} ]
 _global_script_class_icons={
-
+"Player": "",
+"Unit": "",
+"UnitAttributes": "",
+"UnitStats": "",
+"UnitType": ""
 }
 
 [application]
